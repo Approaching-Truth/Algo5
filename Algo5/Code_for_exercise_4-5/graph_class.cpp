@@ -281,7 +281,7 @@ void Graph::AStar(pairType start, map<pairType,pairType> path, pairType goal, ma
 void Graph::calculateBestDistance(pairType bestGuess ,vector<pairType> &adj,map<pairType,int> &dist, map<pairType,pairType> &path,	priority_queue<prio, vector<prio>, greater<prio>> &pq, pairType goal)
 {
 	for(auto i : adj)
-			{
+			{	//Calculate the or update the best distance for the coordinates, set path, and push to the priority que
 				if(dist[bestGuess]+1 < dist[i] )
 				{
 					dist[i]=dist[bestGuess]+1;
@@ -300,6 +300,7 @@ void Graph::calculateBestDistance(pairType bestGuess ,vector<pairType> &adj,map<
 
 void Graph::initializeNeighborgs(vector<pairType> &adj,  map<pairType,int> &dist)
 {
+	//Gives the neighbors an initial distance
 	for(auto i : adj)
 	{
 

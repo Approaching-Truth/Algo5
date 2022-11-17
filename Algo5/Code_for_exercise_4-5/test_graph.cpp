@@ -2,11 +2,10 @@
 int main()
 {
 
-    vector<pairType> vec;
-	vector<int> test;
-	map<pairType,int> dist;
+
     Graph j;
-	map<pairType,pairType> map;
+	
+	//The Maze
 	j.addWall(make_pair(2, 7));
     j.addWall(make_pair(2, 6));
     j.addWall(make_pair(3, 6));
@@ -16,9 +15,11 @@ int main()
     j.addWall(make_pair(5, 3));
     j.addWall(make_pair(5, 2));
     j.addWall(make_pair(3, 4));
-	//j.printSet();
 	
-	
+	//Start Algorithm
+		map<pairType,int> dist;
+
+	map<pairType,pairType> map;
 	pairType start = make_pair(1,4);
 	pairType goal = make_pair(6,6);
 	j.AStar(start,map, goal,dist);
